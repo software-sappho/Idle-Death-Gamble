@@ -1,0 +1,59 @@
+body { 
+    text-align: center; 
+    font-family: Arial, sans-serif; 
+}
+
+.slot-container {
+    border: 2px solid black; 
+    margin-left: 0;
+    float: left;
+}
+
+.slot { 
+    font-size: 2em; 
+    margin: 10px; 
+    display: inline-block; 
+    width: 50px; 
+    height: 50px; 
+    border: 2px solid black; 
+    text-align: center; 
+    line-height: 50px; 
+}
+    
+
+/* Indicators */
+/* Styling the indicator boxes */
+
+
+/* Styling for the reach mode indicator container */
+.reach-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;  /* Align indicators horizontally */
+}
+
+.indicator {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.gold {
+    background-color: gold;
+}
+
+.rainbow {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, purple);
+    color: transparent; /* Ensures the text is hidden */
+     border: 2px solid white; /*Optional: to make the rainbow more visible */
+}
