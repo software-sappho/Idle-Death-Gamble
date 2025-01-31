@@ -1,18 +1,31 @@
 function getRandomNumber() {
-    return Math.floor(Math.random() * (3 - 1 + 1)) + 1; // Generates 1, 2, or 3
+    return Math.floor(Math.random() * 3) + 1; // Generates 1, 2, or 3
 }
 
 function spinFirstTwoNumbers() {
     document.getElementById("slot1").innerText = "?";
     document.getElementById("slot2").innerText = "?";
 
-     // Call to display the indicators at the start of the spin
-     displayIndicators();
+    displayIndicators(); // Show indicators at the start
 
     let counter = 0;
     let interval = setInterval(() => {
-        document.getElementById("slot1").innerText = getRandomNumber();
-        document.getElementById("slot2").innerText = getRandomNumber();
+        let num1 = getRandomNumber();
+        let num2;
+
+        let chance = Math.random();
+        if (chance <= 0.9) { 
+            // 90% chance to be the same
+            num2 = num1;
+        } else {
+            // 10% chance to be different
+            do {
+                num2 = getRandomNumber();
+            } while (num2 === num1); // Ensure it's different
+        }
+
+        document.getElementById("slot1").innerText = num1;
+        document.getElementById("slot2").innerText = num2;
         
         counter++;
         if (counter >= 10) { // Stops after 10 changes
@@ -20,7 +33,6 @@ function spinFirstTwoNumbers() {
         }
     }, 100); // Changes numbers every 100ms
 }
-
 
 // Generate random indicator based on weighted probabilities
 function getRandomIndicator() {
@@ -41,10 +53,8 @@ function displayIndicators() {
     const reachContainer = document.getElementById("reach-mode");
     reachContainer.innerHTML = ''; // Clear previous indicators
 
-    // Generate 5 random indicators to show
-        const indicatorType = getRandomIndicator();
-        const indicatorDiv = document.createElement("div");
-        indicatorDiv.classList.add("indicator", indicatorType);
-        reachContainer.appendChild(indicatorDiv);
-    
+    const indicatorType = getRandomIndicator();
+    const indicatorDiv = document.createElement("div");
+    indicatorDiv.classList.add("indicator", indicatorType);
+    reachContainer.appendChild(indicatorDiv);
 }
