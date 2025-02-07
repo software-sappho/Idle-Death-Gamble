@@ -1,10 +1,27 @@
-body { 
+/* Default Light Mode for body*/
+body {
     text-align: center; 
-    font-family: Arial, sans-serif; 
+    background-color: white;
+    color: black;
+    transition: background-color 0.5s, color 0.10s;
+}
+
+/* Default Dark Mode for body*/
+body.dark-mode {
+    text-align: center; 
+    background-color: black;
+    color: white;
+    transition: background-color 0.5s, color 0.10s;
+}
+
+/* Button Style */
+button {
+    padding: 10px;
+    cursor: pointer;
 }
 
 .slot-container {
-    border: 2px solid black; 
+    border: 2px solid rgb(0, 0, 0); 
     margin-left: 0;
     float: left;
 }
@@ -19,17 +36,32 @@ body {
     text-align: center; 
     line-height: 50px; 
 }
+
+body.dark-mode .slot-container {
+    border: 2px solid rgb(255, 255, 255); 
+    margin-left: 0;
+    float: left;
+}
+
+body.dark-mode .slot  { 
+    font-size: 2em; 
+    margin: 10px; 
+    display: inline-block; 
+    width: 50px; 
+    height: 50px; 
+    border: 2px solid rgb(255, 255, 255); 
+    text-align: center; 
+    line-height: 50px; 
+}
     
 
 /* Indicators */
 /* Styling the indicator boxes */
-
-
 /* Styling for the reach mode indicator container */
 .reach-container {
     margin-top: 20px;
     display: flex;
-    justify-content: center;  /* Align indicators horizontally */
+    justify-content: center;  
 }
 
 .indicator {

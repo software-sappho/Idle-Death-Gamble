@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idle Death Gamble - Spinning Numbers</title>
-    <link rel="stylesheet" href="style//style.css">
-    <script src="logic.js"></script> 
+    <title>Idle Death Gamble</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="toggleTheme.js"></script> 
+    <script src="gambling_logic.js"></script> 
+
 </head>
 <body>
-    <h1>Idle Death Gamble - Spinning Numbers</h1>
+    <h1>Idle Death Gamble</h1>
     <div class="slot-container">
         <p>Numbers Rolling...</p>
         <div class="slot" id="slot1">?</div>
@@ -16,6 +18,8 @@
     </div>
 
     <button onclick="spinFirstTwoNumbers()">Spin</button>
+
+    <button onclick="toggleTheme()">Toggle Dark Mode</button>
 
     <div id="reach-mode" class="reach-container">
         <!-- Random indicators will be inserted here -->
